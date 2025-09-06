@@ -34,3 +34,28 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+<!--
+Next.js 14(App Router) + TypeScript
+
+Tailwind CSS (디자인 시스템 & 반응형)
+
+shadcn/ui (실무급 UI 컴포넌트)
+
+Framer Motion (부드러운 모션/스크롤 인터랙션)
+
+MDX (프로젝트/블로그 글을 문서처럼 관리)
+
+next-seo (SEO 템플릿)
+
+Plausible or Google Analytics (분석)
+
+Vercel (원클릭 배포 & 프리뷰 URL)
+-->
+
+<!--
+ page.tsx                # Home(Hero/Projects/Skills/CTA)
+ page.tsx              # 전체 프로젝트 리스트
+ page.tsx            # 개별 프로젝트 상세(MDX)
+ contact/route.ts      # 폼 제출(이메일 or DB)
+-->
