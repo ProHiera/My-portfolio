@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
-import Navbar from "@/components/ui/Navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
