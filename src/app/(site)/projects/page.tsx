@@ -23,6 +23,12 @@ export default function ProjectsPage() {
       summary: "자전거 특화 몰",
       tags: ["eCommerce", "Map API"],
     },
+    {
+      slug: "LearnMate",
+      title: "LearnMate",
+      summary: "독학전용 멘토 + 멘탈케어 + 스케줄관리",
+      tags: ["OPEN AI", "Sceduller"],
+    },
   ];
 
   return (
