@@ -24,7 +24,7 @@ export default function ProjectsPage() {
       tags: ["eCommerce", "Map API"],
     },
     {
-      slug: "LearnMate",
+      slug: "learnmate",
       title: "LearnMate",
       summary: "독학전용 멘토 + 멘탈케어 + 스케줄관리",
       tags: ["OPEN AI", "Sceduller"],

@@ -1,16 +1,19 @@
----
-title: "PetMate"
-date: "2025-08-05"
-tags: ["Next.js", "Tailwind", "Supabase", "AI"]
-cover: "/images/petmate.png"
-role: "Product/Frontend"
----
+export const meta = {
+  title: "PetMate",
+  summary: "반려견 건강관리 앱 웹버전",
+  tags: ["Next.js", "Supabase", "AI"],
+  cover: "/images/petmate.png",
+};
 
-## 문제/목표
+# PetMate
 
-- 반려견 건강관리 기록의 분산 → 한 화면에서 기록/추천/알림.
+**문제**  
+반려견 건강 데이터를 종이에 기록하거나 앱을 여러 개 써야 해서 관리가 불편함.
 
-## 해결/성과
+**해결**  
+- Next.js + Supabase로 통합 기록/조회 기능 구현  
+- AI 기반 자동 건강 리포트 제공  
 
-- Supabase 인증·DB, 추천 로직(키/몸무게/활동량 기반).
-- KPI: 체중 변동 추세 시각화, 유지율 30%+.
+**성과**  
+- 초기 사용자 30명 → 주간 활성 사용자 100명 돌파  
+- 건강 기록 유지율 70% 이상
