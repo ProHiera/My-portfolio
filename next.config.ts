@@ -1,17 +1,18 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
+
 import createMDX from "@next/mdx";
-import remarkGfm from "remark-gfm";
 import type { NextConfig } from "next";
+import { createRequire } from "node:module";
+const require = createRequire(import.meta.url);
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [require.resolve("remark-gfm")],
   },
 });
 
+const nextConfig: NextConfig = {
+  pageExtensions: ["ts", "tsx", "mdx"],
+};
 
-import createMDX from '@next/mdx';
-const withMDX = createMDX({ options: { remarkPlugins: [require('remark-gfm')] } });
-
-/** @type {import('next').NextConfig} */
-const nextConfig = { pageExtensions: ['ts','tsx','mdx'] };
 export default withMDX(nextConfig);

@@ -50,7 +50,7 @@ next-seo (SEO 템플릿)
 
 Plausible or Google Analytics (분석)
 
-Vercel (원클릭 배포 & 프리뷰 URL)
+Vercel (원클릭 배포 & 프리뷰 URL) / Git
 -->
 
 <!--
