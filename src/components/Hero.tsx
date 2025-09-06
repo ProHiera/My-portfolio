@@ -22,8 +22,8 @@ export default function Hero() {
           transition={{ delay: 0.1, duration: 0.6 }}
           className="mt-4 max-w-2xl text-base sm:text-lg opacity-80"
         >
-          반응형·인터랙션이 강한 웹을 만드는 프론트엔드/풀스택 주니어. Next.js +
-          Tailwind + Motion으로 실제 서비스 품질에 집중합니다.
+          반응형·인터랙션 웹을 만드는 프론트엔드/풀스택 주니어. Next.js +
+          Tailwind + Motion으로 서비스 품질에 집중합니다.
         </motion.p>
 
         <motion.div
@@ -33,7 +33,7 @@ export default function Hero() {
           className="mt-8 flex gap-3"
         >
           <Button asChild size="lg">
-            <a href="/projects">
+            <a href="@/projects">
               프로젝트 보러가기 <ArrowRight className="ml-2 size-4" />
             </a>
           </Button>

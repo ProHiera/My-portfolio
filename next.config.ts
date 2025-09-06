@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
+/** eslint-disable @typescript-eslint/no-require-imports */
 
 import createMDX from "@next/mdx";
 import type { NextConfig } from "next";

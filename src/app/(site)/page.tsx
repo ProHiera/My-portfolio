@@ -1,7 +1,8 @@
 /* Home(Hero/Projects/Skills/CTA) */
 
-import Hero from "@/components/ui/Hero";
-import ProjectCard from "@/components/ui/ProjectCard";
+import { Button } from "@/components/ui/button";
+import Hero from "@/components/Hero";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function HomePage() {
   const featured = [
@@ -38,6 +39,11 @@ export default function HomePage() {
             {featured.map((p) => (
               <ProjectCard key={p.slug} {...p} />
             ))}
+            <div className="mt-6">
+              <Button asChild>
+                <a href="@/projects">프로젝트 더 보기</a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
