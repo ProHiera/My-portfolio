@@ -3,8 +3,7 @@ export type Project = {
   title: string;
   summary: string;
   tags: string[];
-  cover: string; // /public/images/...
-  content?: string; // 상세용(간단 텍스트 예시). MDX 쓰면 안 써도 됨.
+  cover: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -29,7 +28,16 @@ export const PROJECTS: Project[] = [
     tags: ["eCommerce", "Map API"],
     cover: "/images/biketown.png",
   },
+  {
+    slug: "learnmate",
+    title: "LearnMate",
+    summary: "맞춤형 학습 관리 플랫폼",
+    tags: ["Next.js", "Tailwind", "Supabase"],
+    cover: "/images/learnmate.png",
+  },
 ];
 
+// 홈에선 전부 보여주고 싶으니 FEATURED도 4개 전부
+export const FEATURED = PROJECTS;
 export const bySlug = (slug: string) => PROJECTS.find((p) => p.slug === slug);
 export const slugs = () => PROJECTS.map((p) => ({ slug: p.slug }));

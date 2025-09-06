@@ -1,20 +1,12 @@
-import "../globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "이나라 | 포트폴리오",
-  description: "UI/UX & Full-stack Portfolio of Nara Lee",
-  metadataBase: new URL("https://nara.dev"), // 나중에 도메인 바꿔줘
-  openGraph: {
-    title: "이나라 | 포트폴리오",
-    description: "Projects, case studies, contact",
-    url: "/",
-    siteName: "Nara Portfolio",
-    type: "website",
-  },
+  title: "Nara Portfolio",
+  description: "이 나라의 포트폴리오 사이트",
 };
 
 export default function RootLayout({
@@ -24,10 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" suppressHydrationWarning>
-      <body>
+      <body className="min-h-screen flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <main className="min-h-dvh">{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
