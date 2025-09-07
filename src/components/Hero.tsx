@@ -46,12 +46,7 @@ export default function Hero() {
                   delay: 0.08 * i,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="
-        text-transparent bg-clip-text
-        text-base sm:text-lg leading-relaxed
-        bg-[linear-gradient(180deg,theme(colors.foreground),theme(colors.muted-foreground))]
-        selection:bg-primary/20 selection:text-foreground
-      "
+                className="text-transparent bg-clip-text text-base sm:text-lg leading-relaxed text-grad-foreground selection:bg-primary/20 selection:text-foreground"
               >
                 {line}
               </motion.p>
