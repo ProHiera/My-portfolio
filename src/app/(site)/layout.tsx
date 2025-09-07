@@ -3,6 +3,9 @@ import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "../globals.css";
+import { Noto_Sans_KR } from "next/font/google";
+
+const noto = Noto_Sans_KR({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Nara Portfolio",
@@ -16,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col">
+      <body
+        suppressHydrationWarning
+        className={`${noto.className} antialiased min-h-screen flex flex-col`}
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <main className="flex-1">{children}</main>

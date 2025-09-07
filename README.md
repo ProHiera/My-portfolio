@@ -35,6 +35,8 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+Built with a custom design system based on shadcn/ui and Radix UI. All components are customized and maintained in-repo. (MIT)
+
 <!--
 Next.js 14(App Router) + TypeScript
 
@@ -51,11 +53,4 @@ next-seo (SEO 템플릿)
 Plausible or Google Analytics (분석)
 
 Vercel (원클릭 배포 & 프리뷰 URL) / Git
--->
-
-<!--
- page.tsx                # Home(Hero/Projects/Skills/CTA)
- page.tsx              # 전체 프로젝트 리스트
- page.tsx            # 개별 프로젝트 상세(MDX)
- contact/route.ts      # 폼 제출(이메일 or DB)
 -->

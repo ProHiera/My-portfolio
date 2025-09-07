@@ -3,7 +3,12 @@ export type Project = {
   title: string;
   summary: string;
   tags: string[];
-  cover: string;
+  cover?: string;
+  links?: {
+    live?: string;
+    github?: string;
+    demo?: string;
+  };
 };
 
 export const PROJECTS: Project[] = [
@@ -13,13 +18,6 @@ export const PROJECTS: Project[] = [
     summary: "반려견 건강관리 앱 웹버전",
     tags: ["Next.js", "Supabase", "AI"],
     cover: "/images/petmate.jpg",
-  },
-  {
-    slug: "kd-academy",
-    title: "KD Academy",
-    summary: "학원 사이트 클론 + 예약",
-    tags: ["JSP", "Servlet", "MySQL"],
-    cover: "/images/kd.jpg",
   },
   {
     slug: "biketown",
@@ -34,6 +32,17 @@ export const PROJECTS: Project[] = [
     summary: "맞춤형 학습 관리 플랫폼",
     tags: ["Next.js", "Tailwind", "Supabase"],
     cover: "/images/learnmate.jpg",
+  },
+  {
+    slug: "portfolio",
+    title: "Nara Portfolio",
+    summary: "Next.js + MDX 기반 확장형 포트폴리오 플랫폼",
+    tags: ["Next.js", "Tailwind", "MDX", "Vercel"],
+    cover: "/images/portfolio-cover.jpg",
+    links: {
+      live: "https://my-portfolio-two-tan-qqtr7exjq6.vercel.app/",
+      github: "https://github.com/ProHiera/nara-portfolio",
+    },
   },
 ];
 

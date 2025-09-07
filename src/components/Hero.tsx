@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-14">
       {/* 2칼럼: 왼쪽 텍스트/아이콘 | 오른쪽 이미지 */}
       <div className="container mx-auto px-4 grid gap-12 lg:grid-cols-2 items-start">
         {/* 왼쪽 */}
@@ -20,18 +20,61 @@ export default function Hero() {
             이나라 <span className="opacity-70">Portfolio</span>
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.6 }}
-            className="mt-4 max-w-2xl text-base sm:text-lg opacity-80"
-          >
-            디자인과 개발의 경계를 허무는 풀스택 크리에이터형 개발자입니다.
-            <br />
-            아이디어를 구조로, 구조를 제품으로 전환하며
-            <br />
-            기획·디자인·개발·출시를 하나로 묶어 빠르게 검증하고 출시합니다.
-          </motion.p>
+          {/* ==== 타이포 효과 블록 (문단만) ==== */}
+          <div className="mt-4 max-w-2xl relative will-change-transform">
+            {[
+              "디자인과 개발의 경계를 허무는 풀스택 크리에이터형 개발자입니다.",
+              "아이디어를 구조로, 구조를 제품으로 전환하며",
+              "기획·디자인·개발·출시를 하나로 묶어 빠르게 검증하고 출시합니다.",
+            ].map((line, i) => (
+              <motion.p
+                key={i}
+                initial={{
+                  opacity: 0,
+                  y: 8,
+                  filter: "blur(6px)",
+                  letterSpacing: "0.04em",
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  filter: "blur(0px)",
+                  letterSpacing: "0em",
+                }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.08 * i,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="
+        text-transparent bg-clip-text
+        text-base sm:text-lg leading-relaxed
+        bg-[linear-gradient(180deg,theme(colors.foreground),theme(colors.muted-foreground))]
+        selection:bg-primary/20 selection:text-foreground
+      "
+              >
+                {line}
+              </motion.p>
+            ))}
+
+            {/* 은은한 1회성 광택 스윕 (원하면 이 span 지우면 됨) */}
+            <motion.span
+              initial={{ x: "-15%", opacity: 0 }}
+              animate={{ x: "110%", opacity: [0, 0.35, 0] }}
+              transition={{
+                duration: 1.2,
+                delay: 0.2,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              aria-hidden
+              className="
+      pointer-events-none absolute inset-y-0 left-0 w-1/3
+      bg-gradient-to-r from-transparent via-white/30 to-transparent
+      mix-blend-overlay rounded
+    "
+            />
+          </div>
+          {/* ==== /타이포 효과 블록 ==== */}
 
           <motion.div
             initial={{ opacity: 0, y: 12 }}
