@@ -55,22 +55,24 @@ export default function Hero() {
             {/* 은은한 1회성 광택 스윕 */}
             <motion.span
               initial={{ x: "-15%", opacity: 0 }}
-              animate={{ x: "110%", opacity: [0, 0.35, 0] }}
+              animate={{ x: "80%", opacity: [0, 0.4, 0] }}
               transition={{
-                duration: 1.2,
-                delay: 0.2,
-                //repeat,repeatdelay 디자인 추가 최종 변경 가능여부
+                duration: 1.4,
+                delay: 0.25,
                 repeat: Infinity,
-                repeatDelay: 3,
+                repeatDelay: 3.2,
                 ease: [0.22, 1, 0.36, 1],
               }}
               aria-hidden
               className="
-      pointer-events-none absolute inset-y-0 left-0 w-1/3
-      bg-gradient-to-r from-transparent via-white/30 to-transparent
-      mix-blend-overlay rounded
+      pointer-events-none absolute inset-y-0 left-0 w-2/5
+      bg-gradient-to-r from-transparent via-black/10 to-transparent
+      dark:via-white/30
+      mix-blend-multiply dark:mix-blend-overlay
+      rounded will-change-transform
     "
             />
+            {/* 라이트모드에서도 보이도록 via-black/10 + mix-blend-multiply, 다크는 기존 흰색 overlay 유지 */}
           </div>
           {/* ==== /타이포 효과 블록 ==== */}
 

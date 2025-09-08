@@ -48,7 +48,7 @@ export default function ProjectCard({
 
           {/* 본문 */}
           <CardContent className="p-5 flex-1 grid grid-rows-[auto_1fr_auto] gap-2">
-            {/* ✨ 반짝임 텍스트: Tailwind 의존 없이 styled-jsx 로 안전 적용 */}
+            {/* ✨ 반짝임 텍스트 (다크모드에서만) */}
             <h3 className="text-lg font-semibold leading-tight">
               <span className="pc-shiny-text">{title}</span>
             </h3>
@@ -80,7 +80,7 @@ export default function ProjectCard({
         </Card>
       </Link>
 
-      {/* 프로덕션에서도 안 잘리게 전역 키프레임/스타일 주입 */}
+      {/* 라이트모드 가독성 개선: 다크모드에서만 그라데이션/투명 처리 */}
       <style jsx global>{`
         @keyframes pc-text-shine {
           0% {
@@ -93,15 +93,34 @@ export default function ProjectCard({
         .pc-shiny-text {
           background-image: linear-gradient(
             90deg,
-            rgba(255, 255, 255, 0.25) 0%,
-            rgba(255, 255, 255, 1) 50%,
-            rgba(255, 255, 255, 0.25) 100%
+            rgba(0, 0, 0, 0.82) 0%,
+            rgba(0, 0, 0, 0.52) 50%,
+            rgba(0, 0, 0, 0.82) 100%
           );
           background-size: 200% 100%;
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
-          animation: pc-text-shine 1.8s linear infinite;
+          animation: pc-text-shine 6s linear infinite reverse; /* 느리게 + 방향 반전 */
+        }
+        .dark .pc-shiny-text {
+          background-image: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.18) 0%,
+            rgba(255, 255, 255, 0.9) 50%,
+            rgba(255, 255, 255, 0.18) 100%
+          );
+          background-size: 200% 100%;
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          animation: pc-text-shine 7.5s linear infinite reverse; /* 다크도 더 느리게 */
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .pc-shiny-text,
+          .dark .pc-shiny-text {
+            animation: none;
+          }
         }
       `}</style>
     </motion.div>
