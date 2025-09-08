@@ -216,3 +216,23 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* 모바일 수평 스크롤/폭 문제 해결을 위해 전역 레이아웃 폭 제한 및 스크롤바 흔들림 방지 추가 */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* iOS 100vh 보정 (Safari 주소줄) */
+:root {
+  --vh: 1vh;
+}
+@supports (height: 100dvh) {
+  :root {
+    --vh: 1dvh;
+  }
+}
+.full-viewport-safe {
+  min-height: calc(var(--vh) * 100);
+}

@@ -34,15 +34,15 @@ export default function ProjectCard({
       >
         <Card
           className="
-    h-[var(--card-h)] flex flex-col overflow-hidden
+    h-auto sm:h-[var(--card-h)] flex flex-col overflow-hidden
     transform-gpu will-change-transform
     card-raise-base hover:card-raise-hover
     border border-zinc-200/60 dark:border-zinc-800/60
     bg-white/40 dark:bg-zinc-900/40
   "
         >
-          {/* 고정 비율 이미지 */}
-          <div className="relative aspect-[16/10] shrink-0">
+          {/* 고정 비율 이미지 (모바일은 조금 더 낮은 높이: 16/9) */}
+          <div className="relative aspect-[16/9] sm:aspect-[16/10] shrink-0">
             <Image src={coverSrc} alt={title} fill className="object-cover" />
           </div>
 
@@ -53,7 +53,7 @@ export default function ProjectCard({
               <span className="pc-shiny-text">{title}</span>
             </h3>
 
-            {/* 2줄 요약 (플러그인 없이 동작) */}
+            {/* 2줄 요약 (모바일에서 여유 공간 없으면 자동 확장) */}
             <p
               className="text-sm opacity-80 leading-6 overflow-hidden"
               style={{
@@ -65,8 +65,8 @@ export default function ProjectCard({
               {summary}
             </p>
 
-            {/* 태그 */}
-            <div className="mt-2 flex items-start gap-2 overflow-hidden h-7">
+            {/* 태그 (고정 높이 → 자연 높이, 줄바꿈 허용) */}
+            <div className="mt-2 flex flex-wrap items-start gap-2 overflow-visible">
               {(tags || []).slice(0, 4).map((t) => (
                 <span
                   key={t}
