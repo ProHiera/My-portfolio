@@ -1,24 +1,58 @@
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
 
-/* Tailwind v4: 소스 경로 등록 (빌드에서 클래스 누락 방지) */
-@source "./app";
-@source "./pages";
-@source "./components";
-@source "./data";
-@source "./content";
-@source "./src/app";
-@source "./src/pages";
-@source "./src/components";
-@source "./src/data";
-@source "./src/content";
+/* ──────────────────────────────────────────────────────────────
+   1) 프로덕션에서도 절대 안 잘리는 커스텀 유틸
+   ────────────────────────────────────────────────────────────── */
 
-/* variants */
+/* 텍스트 반짝임 */
+@keyframes text-shine {
+  to {
+    background-position: 200% 0;
+  }
+}
+@utility text-shine {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: text-shine 1.8s linear infinite;
+}
+
+/* 카드 기본 전환 설정 */
+@utility card-raise-base {
+  transition-property: transform, box-shadow, background-color, opacity, filter;
+  transition-duration: 300ms;
+  will-change: transform, box-shadow;
+  transform: translateY(0);
+}
+
+/* hover 시 적용될 상태(사용할 때 hover: 접두어로) */
+@utility card-raise-hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   2) variants
+   ────────────────────────────────────────────────────────────── */
+
+/* dark: 변형을 .dark 컨테이너 기준으로 사용 */
 @custom-variant dark (&:is(.dark *));
-/* (선택) 모바일에서도 hover를 쓰고 싶을 때 */
-@custom-variant hover (&:hover);
 
-/* 테마 토큰 매핑 (Tailwind 색/폰트 토큰 ↔ CSS 변수) */
+/* (주의) 기본 hover 변형과 충돌하므로 커스텀 hover 변형은 만들지 않음 */
+/* @custom-variant hover (&:hover);  ← 제거 */
+
+/* ──────────────────────────────────────────────────────────────
+   3) 테마 토큰 매핑 (Tailwind 토큰 ↔ CSS 변수)
+   ────────────────────────────────────────────────────────────── */
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -64,7 +98,10 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* 라이트 모드 변수 (OKLCH) */
+/* ──────────────────────────────────────────────────────────────
+   4) 라이트/다크 변수 (OKLCH)
+   ────────────────────────────────────────────────────────────── */
+
 :root {
   --radius: 0.625rem;
 
@@ -111,7 +148,6 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-/* 다크 모드 변수 */
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -156,9 +192,12 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/* 재사용 유틸리티 */
+/* ──────────────────────────────────────────────────────────────
+   5) 레이어: 유틸/베이스
+   ────────────────────────────────────────────────────────────── */
+
 @layer utilities {
-  /* 텍스트-그라데이션 유틸 (변수 직접 사용: OKLCH 호환) */
+  /* 텍스트-그라데이션 유틸 (예: bg-clip-text와 함께 사용) */
   .text-grad-foreground {
     background-image: linear-gradient(
       180deg,
