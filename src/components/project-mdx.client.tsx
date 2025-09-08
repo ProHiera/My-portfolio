@@ -5,8 +5,8 @@ import type { ComponentType } from "react";
 
 const loaders = {
   portfolio: () => import("@/content/projects/portfolio.mdx"),
-  biketown: () => import("@/content/projects/biketown.mdx"),
   petmate: () => import("@/content/projects/petmate.mdx"),
+  biketown: () => import("@/content/projects/biketown.mdx"),
   learnmate: () => import("@/content/projects/learnmate.mdx"),
 } as const;
 
