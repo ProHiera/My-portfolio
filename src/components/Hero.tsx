@@ -52,13 +52,16 @@ export default function Hero() {
               </motion.p>
             ))}
 
-            {/* 은은한 1회성 광택 스윕 (원하면 이 span 지우면 됨) */}
+            {/* 은은한 1회성 광택 스윕 */}
             <motion.span
               initial={{ x: "-15%", opacity: 0 }}
               animate={{ x: "110%", opacity: [0, 0.35, 0] }}
               transition={{
                 duration: 1.2,
                 delay: 0.2,
+                //repeat,repeatdelay 디자인 추가 최종 변경 가능여부
+                repeat: Infinity,
+                repeatDelay: 3,
                 ease: [0.22, 1, 0.36, 1],
               }}
               aria-hidden
