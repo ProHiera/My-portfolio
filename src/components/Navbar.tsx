@@ -5,7 +5,10 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 bg-background/60 backdrop-blur border-b">
+    <header
+      className="fixed top-0 left-0 right-0 z-50 bg-background/90 supports-[backdrop-filter]:bg-background/60 backdrop-blur border-b shadow-sm"
+      style={{ paddingTop: "env(safe-area-inset-top)" }}
+    >
       <div className="container mx-auto px-4 grid grid-cols-3 items-center h-16">
         {/* 왼쪽: 로고 */}
         <div className="justify-self-start">

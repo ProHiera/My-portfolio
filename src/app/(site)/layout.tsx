@@ -25,7 +25,13 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          {/* fixed 네비게이션 높이 보정 (h-16 = 4rem + safe area) */}
+          <main
+            className="flex-1 pt-16"
+            style={{ paddingTop: "calc(4rem + env(safe-area-inset-top))" }}
+          >
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>
