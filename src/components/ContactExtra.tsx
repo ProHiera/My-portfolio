@@ -1,18 +1,7 @@
-import Image from "next/image";
-
 export default function ContactExtra() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center w-full p-8 pb-12 gap-10 sm:p-12 border rounded-xl mt-12">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/vercel.svg"
-          alt="Vercel logomark"
-          width={120}
-          height={120}
-          priority
-        />
-
         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
           <li className="mb-2 tracking-[-.01em]">
             이력서(PDF)와 링크들을 아래에서 확인하세요.
