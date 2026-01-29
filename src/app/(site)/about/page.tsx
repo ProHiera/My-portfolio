@@ -5,6 +5,18 @@ export const metadata = {
   title: "About | Nara",
 };
 
+const brandPhotos = [
+  { src: "/images/clotone/01.jpg", alt: "CLotone 가방 사진 1" },
+  { src: "/images/clotone/02.jpg", alt: "CLotone 가방 사진 2" },
+  { src: "/images/clotone/03.jpg", alt: "CLotone 가방 사진 3" },
+] as const;
+
+const teachingPhotos = [
+  { src: "/images/teaching/01.jpg", alt: "강의 현장 사진 1" },
+  { src: "/images/teaching/02.jpg", alt: "강의 현장 사진 2" },
+  { src: "/images/teaching/03.jpg", alt: "강의 현장 사진 3" },
+] as const;
+
 export default function AboutPage() {
   return (
     <section className="py-16 sm:py-20">
@@ -77,30 +89,70 @@ export default function AboutPage() {
                 온라인 채널 운영부터 기획 → 제작 → 촬영 → 판매/CS까지 흐름을
                 직접 설계·관리했습니다.
               </p>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {brandPhotos.map((photo) => (
+                  <figure
+                    key={photo.src}
+                    className="overflow-hidden rounded-2xl border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-950/40"
+                  >
+                    <div className="relative aspect-[4/5] bg-zinc-100/60 dark:bg-zinc-900/40">
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        className="object-contain p-2"
+                        sizes="(min-width: 1024px) 22vw, (min-width: 640px) 38vw, 100vw"
+                      />
+                    </div>
+                  </figure>
+                ))}
+              </div>
             </div>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-semibold">
-              기업 강의 & 단체 출강
-            </h2>
-            <p className="text-sm sm:text-base opacity-80">
-              가죽 분야 기업 강의 및 단체 수업을 전문으로 진행합니다. (현
-              프리랜서 활동)
-            </p>
-            <ul className="grid gap-3 text-sm sm:text-base opacity-80">
-              <li>
-                <span className="font-semibold">2024.11.01 ~ 2024.11.08</span>
-                <span className="mx-2 opacity-50">|</span>
-                서울특별시 동작구청 구청 직원 대상 가죽지갑 강의
-              </li>
-              <li>
-                <span className="font-semibold">2024.12.03</span>
-                <span className="mx-2 opacity-50">|</span>
-                이대목동병원 가죽지갑 단체수업 출강 강사
-              </li>
-              <li>그외 다수</li>
-            </ul>
+            <div>
+              <span className="inline-flex items-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40 px-4 py-1 text-xs font-semibold tracking-wide">
+                기업 강의 & 단체 출강
+              </span>
+            </div>
+            <div className="rounded-2xl border border-zinc-200/70 dark:border-zinc-800/70 bg-white/60 dark:bg-zinc-950/40 p-5 sm:p-6 space-y-4">
+              <p className="text-sm sm:text-base opacity-80">
+                가죽 분야 기업 강의 및 단체 수업을 전문으로 진행합니다. (현
+                프리랜서 활동)
+              </p>
+              <ul className="grid gap-3 text-sm sm:text-base opacity-80">
+                <li>
+                  <span className="font-semibold">2024.11.01 ~ 2024.11.08</span>
+                  <span className="mx-2 opacity-50">|</span>
+                  서울특별시 동작구청 구청 직원 대상 가죽지갑 강의
+                </li>
+                <li>
+                  <span className="font-semibold">2024.12.03</span>
+                  <span className="mx-2 opacity-50">|</span>
+                  이대목동병원 가죽지갑 단체수업 출강 강사
+                </li>
+                <li>그외 다수</li>
+              </ul>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {teachingPhotos.map((photo) => (
+                  <figure
+                    key={photo.src}
+                    className="overflow-hidden rounded-2xl border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-950/40"
+                  >
+                    <div className="relative aspect-[4/3] bg-zinc-100/60 dark:bg-zinc-900/40">
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        className="object-contain p-2"
+                        sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw"
+                      />
+                    </div>
+                  </figure>
+                ))}
+              </div>
+            </div>
           </section>
 
           <section className="space-y-4">
