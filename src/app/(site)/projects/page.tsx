@@ -1,8 +1,6 @@
 ﻿import Image from "next/image";
-import Link from "next/link";
 import { FEATURED } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
-import { Button } from "@/components/ui/button";
 
 export default function ProjectsPage() {
   return (
@@ -23,26 +21,41 @@ export default function ProjectsPage() {
             <div className="rounded-3xl border border-zinc-200/60 dark:border-zinc-800/60 bg-gradient-to-br from-zinc-50 via-white to-zinc-100/70 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950/70">
               <div className="grid gap-8 p-6 sm:p-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
                 <div className="relative overflow-hidden rounded-2xl border border-zinc-200/60 dark:border-zinc-800/60 bg-white/70 dark:bg-zinc-950/60">
-                  <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src="/images/illustration/apec.jpg"
-                      alt="Illustration work"
-                      fill
-                      className="object-cover"
-                      sizes="(min-width: 1024px) 40vw, (min-width: 640px) 55vw, 100vw"
-                    />
-                  </div>
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent dark:from-black/60" />
-                  <div className="absolute left-4 bottom-4 sm:left-6 sm:bottom-6 rounded-full border border-white/60 px-3 py-1 text-xs text-white/90 backdrop-blur">
-                    Illustration
+                  <div className="relative aspect-[2/3] w-full bg-zinc-100/70 dark:bg-zinc-900/50 p-3 sm:p-4">
+                    <div className="relative h-full w-full">
+                      <Image
+                        src="/images/illustration/apec.jpg"
+                        alt="Gyeongju APEC 2025 poster illustration"
+                        fill
+                        className="object-contain"
+                        sizes="(min-width: 1024px) 38vw, (min-width: 640px) 55vw, 100vw"
+                      />
+                    </div>
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-bold">Illustration</h2>
+                  <div className="flex items-center gap-3">
+                    <div className="rounded-2xl p-2 bg-gradient-to-br from-white/70 to-white/30 dark:from-white/5 dark:to-white/0 ring-1 ring-black/5 dark:ring-white/10 shadow-md backdrop-blur-[2px]">
+                      <img
+                        src="https://skillicons.dev/icons?i=ai"
+                        alt="Illustrator icon"
+                        width={26}
+                        height={26}
+                        className="block"
+                        loading="lazy"
+                      />
+                    </div>
+                    <span className="text-xs uppercase tracking-[0.32em] opacity-60">
+                      Illustration Only
+                    </span>
+                  </div>
+                  <h2 className="text-2xl font-bold">
+                    Gyeongju APEC 2025 Poster
+                  </h2>
                   <p className="opacity-80 leading-7">
-                    Keep illustration work on the same page, but give it a
-                    distinct block so it reads as a separate category.
+                    경주 APEC 2025 공모전 출품 Poster 작업입니다. 행사 분위기와
+                    지역 이미지를 한 장에 정리해 전달력을 높였어요.
                   </p>
                   <div className="flex flex-wrap gap-2 text-xs">
                     {["Character", "Editorial", "Poster"].map((tag) => (
@@ -54,17 +67,6 @@ export default function ProjectsPage() {
                       </span>
                     ))}
                   </div>
-                  <div className="flex flex-wrap gap-3">
-                    <Button asChild>
-                      <Link href="/contact">Request the full set</Link>
-                    </Button>
-                    <Button asChild variant="outline">
-                      <Link href="/contact">Ask about availability</Link>
-                    </Button>
-                  </div>
-                  <p className="text-xs opacity-60">
-                    Replace this block with your single-page gallery when ready.
-                  </p>
                 </div>
               </div>
             </div>
