@@ -1,35 +1,49 @@
-"use client";
+﻿"use client";
 
 import dynamic from "next/dynamic";
 import type { ComponentType } from "react";
 
-const loaders = {
-  portfolio: () => import("@/content/projects/portfolio.mdx"),
-  petmate: () => import("@/content/projects/petmate.mdx"),
-  biketown: () => import("@/content/projects/biketown.mdx"),
-  learnmate: () => import("@/content/projects/learnmate.mdx"),
+const mdxComponents = {
+  portfolio: dynamic(
+    async () =>
+      (await import("@/content/projects/portfolio.mdx"))
+        .default as ComponentType<Record<string, unknown>>,
+    { ssr: false, loading: () => <div className="h-6" /> }
+  ),
+  petmate: dynamic(
+    async () =>
+      (await import("@/content/projects/petmate.mdx"))
+        .default as ComponentType<Record<string, unknown>>,
+    { ssr: false, loading: () => <div className="h-6" /> }
+  ),
+  biketown: dynamic(
+    async () =>
+      (await import("@/content/projects/biketown.mdx"))
+        .default as ComponentType<Record<string, unknown>>,
+    { ssr: false, loading: () => <div className="h-6" /> }
+  ),
+  learnmate: dynamic(
+    async () =>
+      (await import("@/content/projects/learnmate.mdx"))
+        .default as ComponentType<Record<string, unknown>>,
+    { ssr: false, loading: () => <div className="h-6" /> }
+  ),
 } as const;
 
-type Slug = keyof typeof loaders;
+type Slug = keyof typeof mdxComponents;
 
 export default function ProjectMDX({ slug }: { slug: string }) {
-  if (!(slug in loaders)) {
+  if (!(slug in mdxComponents)) {
     return (
       <div className="text-sm text-muted-foreground">
-        문서를 찾을 수 없어요.
+        臾몄꽌瑜?李얠쓣 ???놁뼱??
       </div>
     );
   }
 
-  const MDXComp = dynamic(
-    async () => {
-      const mod = await loaders[slug as Slug]();
-      return mod.default as ComponentType<Record<string, unknown>>;
-    },
-    { ssr: false, loading: () => <div className="h-6" /> }
-  );
+  const MDXComp = mdxComponents[slug as Slug];
 
-  // 가운데 단정하게
+  // 媛?대뜲 ?⑥젙?섍쾶
   return (
     <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-8 space-y-6">
       <div
