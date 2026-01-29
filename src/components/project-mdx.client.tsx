@@ -10,15 +10,15 @@ const mdxComponents = {
         .default as ComponentType<Record<string, unknown>>,
     { ssr: false, loading: () => <div className="h-6" /> }
   ),
-  petmate: dynamic(
+  gagi: dynamic(
     async () =>
-      (await import("@/content/projects/petmate.mdx"))
+      (await import("@/content/projects/gagi.mdx"))
         .default as ComponentType<Record<string, unknown>>,
     { ssr: false, loading: () => <div className="h-6" /> }
   ),
-  biketown: dynamic(
+  myshop: dynamic(
     async () =>
-      (await import("@/content/projects/biketown.mdx"))
+      (await import("@/content/projects/myshop.mdx"))
         .default as ComponentType<Record<string, unknown>>,
     { ssr: false, loading: () => <div className="h-6" /> }
   ),
@@ -36,14 +36,14 @@ export default function ProjectMDX({ slug }: { slug: string }) {
   if (!(slug in mdxComponents)) {
     return (
       <div className="text-sm text-muted-foreground">
-        臾몄꽌瑜?李얠쓣 ???놁뼱??
+        문서를 찾을 수 없어요.
       </div>
     );
   }
 
   const MDXComp = mdxComponents[slug as Slug];
 
-  // 媛?대뜲 ?⑥젙?섍쾶
+  // 가운데 단정하게
   return (
     <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-8 space-y-6">
       <div

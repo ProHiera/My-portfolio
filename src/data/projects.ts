@@ -1,4 +1,4 @@
-export type Project = {
+﻿export type Project = {
   slug: string;
   title: string;
   summary: string;
@@ -13,30 +13,32 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    slug: "petmate",
-    title: "PetMate",
-    summary: "반려견 건강관리 앱 웹버전",
-    tags: ["Next.js", "Supabase", "AI"],
+    slug: "gagi",
+    title: "gagi app",
+    summary:
+      "로컬 매장에서 가장 저렴하게 살 수 있도록 내 카드·멤버십 쿠폰 조합을 추천하는 앱",
+    tags: ["App", "UX", "Fintech"],
     cover: "/images/petmate.jpg",
   },
   {
-    slug: "biketown",
-    title: "BikeTown",
-    summary: "자전거 특화 몰 + 예약/픽업",
-    tags: ["eCommerce", "Map API"],
+    slug: "myshop",
+    title: "myshop",
+    summary:
+      "쇼핑몰 포트폴리오. 디자인·UI/UX·프론트엔드 전 과정을 직접 진행",
+    tags: ["Design", "UI/UX", "Frontend"],
     cover: "/images/biketown.jpg",
   },
   {
     slug: "learnmate",
     title: "LearnMate",
-    summary: "맞춤형 학습 관리 플랫폼",
+    summary: "맞춤형 학습 관리 서비스",
     tags: ["Next.js", "Tailwind", "Supabase"],
     cover: "/images/learnmate.jpg",
   },
   {
     slug: "portfolio",
     title: "Nara Portfolio",
-    summary: "Next.js + MDX 기반 확장형 포트폴리오 플랫폼",
+    summary: "개인 포트폴리오 사이트",
     tags: ["Next.js", "Tailwind", "MDX", "Vercel"],
     cover: "/images/portfolio-cover.jpg",
     links: {
@@ -46,7 +48,7 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-// 홈에선 전부 보여주고 싶으니 FEATURED도 4개 전부
+// 홈에 표시할 프로젝트 목록
 export const FEATURED = PROJECTS;
 export const bySlug = (slug: string) => PROJECTS.find((p) => p.slug === slug);
 export const slugs = () => PROJECTS.map((p) => ({ slug: p.slug }));

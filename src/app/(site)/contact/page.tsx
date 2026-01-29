@@ -51,7 +51,9 @@ export default function ContactPage() {
       {/* ✅ 가운데 정렬 컨테이너 */}
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl">
-          <h1 className="text-3xl font-bold">Contact</h1>
+          <p className="text-xs uppercase tracking-[0.32em] opacity-60">
+            Contact
+          </p>
           <p className="mt-3 opacity-80">협업/채용 문의를 남겨주세요</p>
 
           <form onSubmit={onSubmit} className="mt-8 space-y-4" noValidate>

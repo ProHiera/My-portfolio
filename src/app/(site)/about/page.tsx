@@ -6,9 +6,9 @@ export const metadata = {
 };
 
 const brandPhotos = [
-  { src: "/images/clotone/01.jpg", alt: "CLotone 가방 사진 1" },
-  { src: "/images/clotone/02.jpg", alt: "CLotone 가방 사진 2" },
-  { src: "/images/clotone/03.jpg", alt: "CLotone 가방 사진 3" },
+  { src: "/images/clotone/01.jpg", alt: "Clotone 가방 사진 1" },
+  { src: "/images/clotone/02.jpg", alt: "Clotone 가방 사진 2" },
+  { src: "/images/clotone/03.jpg", alt: "Clotone 가방 사진 3" },
 ] as const;
 
 const teachingPhotos = [
@@ -30,7 +30,7 @@ export default function AboutPage() {
               브랜드 운영자이자 UI/UX 디자이너, 그리고 강의자
             </h1>
             <p className="text-base sm:text-lg leading-7 opacity-80">
-              CLotone 가죽가방 브랜드를 운영하며 제품이 실제로 쓰이기까지의 전
+              CLOTONE 가죽가방 브랜드를 운영하며 제품이 실제로 쓰이기까지의 전
               과정을 경험했습니다. 현재는 LEATHER SMOOD 소속으로 기업 강의 및
               단체 출강을 진행하며(프리랜서 활동), 동시에 UI/UX 역량을 기반으로
               사용자의 불편을 구조적으로 해결하는 디자인을 지향합니다.
@@ -77,7 +77,7 @@ export default function AboutPage() {
             </div>
             <div className="rounded-2xl border border-zinc-200/70 dark:border-zinc-800/70 bg-white/60 dark:bg-zinc-950/40 p-5 sm:p-6 space-y-3">
               <div className="flex flex-wrap items-baseline gap-2">
-                <h3 className="text-lg font-semibold">CLotone</h3>
+                <h3 className="text-lg font-semibold">CLOTONE</h3>
                 <span className="text-sm opacity-60">
                   가죽가방 브랜드 운영 / 대표
                 </span>
@@ -117,6 +117,10 @@ export default function AboutPage() {
               </span>
             </div>
             <div className="rounded-2xl border border-zinc-200/70 dark:border-zinc-800/70 bg-white/60 dark:bg-zinc-950/40 p-5 sm:p-6 space-y-4">
+              <div className="flex flex-wrap items-baseline gap-2">
+                <h3 className="text-lg font-semibold">SMOODY</h3>
+                <span className="text-sm opacity-60">공예강사 / 프리랜서</span>
+              </div>
               <p className="text-sm sm:text-base opacity-80">
                 가죽 분야 기업 강의 및 단체 수업을 전문으로 진행합니다. (현
                 프리랜서 활동)

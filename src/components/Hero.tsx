@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -121,10 +121,17 @@ export default function Hero() {
                   label: "Backend",
                   items: [
                     { name: "Supabase", id: "supabase" },
-                    { name: "MySQL", id: "mysql" },
-                    { name: "AWS", id: "aws" }, // ✅ 추가
+                    { name: "AWS", id: "aws" },
                     { name: "Java", id: "java" },
+                    { name: "Kotlin", id: "kotlin" },
                     { name: "GitHub", id: "github" },
+                  ],
+                },
+                {
+                  label: "Database",
+                  items: [
+                    { name: "PostgreSQL", id: "postgres" },
+                    { name: "MySQL", id: "mysql" },
                   ],
                 },
                 {
