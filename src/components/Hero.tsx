@@ -120,6 +120,7 @@ export default function Hero() {
                 {
                   label: "Backend",
                   items: [
+                    { name: "Python", id: "python" },
                     { name: "Supabase", id: "supabase" },
                     { name: "AWS", id: "aws" },
                     { name: "Java", id: "java" },
