@@ -121,7 +121,6 @@ export default function Hero() {
                   label: "Backend",
                   items: [
                     { name: "Python", id: "python" },
-                    { name: "Supabase", id: "supabase" },
                     { name: "AWS", id: "aws" },
                     { name: "Java", id: "java" },
                     { name: "Kotlin", id: "kotlin" },
@@ -131,6 +130,7 @@ export default function Hero() {
                 {
                   label: "Database",
                   items: [
+                    { name: "Supabase", id: "supabase" },
                     { name: "PostgreSQL", id: "postgres" },
                     { name: "MySQL", id: "mysql" },
                   ],
@@ -218,7 +218,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.98, y: 8 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 1.2, ease: "easeOut" }}
-          className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square mx-auto lg:mx-0 lg:self-start lg:justify-self-end"
+          className="relative w-full max-w-sm sm:max-w-md lg:max-w-md aspect-square mx-auto lg:mx-0 lg:self-start lg:justify-self-end translate-x-[-6%] translate-y-[12%]"
         >
           <Image
             src="/images/me.jpg" // public/images/me.jpg 필요

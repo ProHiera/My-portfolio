@@ -127,14 +127,14 @@ export default function AboutPage() {
               </p>
               <ul className="grid gap-3 text-sm sm:text-base opacity-80">
                 <li>
-                  <span className="font-semibold">2024.11.01 ~ 2024.11.08</span>
-                  <span className="mx-2 opacity-50">|</span>
                   서울특별시 동작구청 구청 직원 대상 가죽지갑 강의
+                  <span className="mx-2 opacity-50">|</span>
+                  <span className="font-semibold">2024.11.01 ~ 2024.11.08</span>
                 </li>
                 <li>
-                  <span className="font-semibold">2024.12.03</span>
-                  <span className="mx-2 opacity-50">|</span>
                   이대목동병원 가죽지갑 단체수업 출강 강사
+                  <span className="mx-2 opacity-50">|</span>
+                  <span className="font-semibold">2024.12.03</span>
                 </li>
                 <li>그외 다수</li>
               </ul>
@@ -187,6 +187,14 @@ export default function AboutPage() {
                 </span>
                 <span className="opacity-80">
                   Google UI/UX Coursera 전문 과정(Professional Certificate)
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
+                  <Monitor className="size-4 opacity-70" />
+                </span>
+                <span className="opacity-80">
+                  KDT Full stack 개발자 과정 수료 2025.07.02 ~ 2025.12.26
                 </span>
               </li>
               <li className="flex items-center gap-3">
