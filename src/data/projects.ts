@@ -36,15 +36,11 @@ export const PROJECTS: Project[] = [
     cover: "/images/learnmate.jpg",
   },
   {
-    slug: "portfolio",
-    title: "Nara Portfolio",
-    summary: "개인 포트폴리오 사이트",
-    tags: ["Next.js", "Tailwind", "MDX", "Vercel"],
+    slug: "arca",
+    title: "ARCA",
+    summary: "AI 기반 일정 자동 정리 및 추천 기능을 제공하는 calendar app",
+    tags: ["AI", "Calendar", "App"],
     cover: "/images/portfolio-cover.jpg",
-    links: {
-      live: "https://my-portfolio-two-tan-qqtr7exjq6.vercel.app/",
-      github: "https://github.com/ProHiera/nara-portfolio",
-    },
   },
 ];
 

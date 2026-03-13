@@ -9,21 +9,17 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-background/60 backdrop-blur">
-      {/* ── 얇은 그라디언트 디바이더 (상단) ── */}
+      {/* Top glow lines */}
       <div className="pointer-events-none absolute left-0 right-0 top-0">
-        {/* 선 자체 */}
         <div className="h-px w-full bg-gradient-to-r from-transparent via-sky-500/40 to-transparent dark:via-sky-400/40" />
-        {/* 아주 옅은 글로우 */}
         <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-sky-500/20 to-transparent dark:via-sky-400/20 blur-[2px]" />
       </div>
 
       <div className="container mx-auto px-4 py-10 flex flex-col items-center text-center gap-4">
-        {/* 브랜드/카피 */}
         <div className="text-sm opacity-80">
-          <span className="font-semibold">NARA</span> — Frontend & Full-stack
+          <span className="font-semibold">NARA</span> Developer
         </div>
 
-        {/* 소셜 아이콘 */}
         <div className="flex items-center gap-2">
           <Button asChild variant="ghost" size="icon" aria-label="GitHub">
             <a
@@ -50,7 +46,6 @@ export default function Footer() {
           </Button>
         </div>
 
-        {/* 링크 */}
         <nav className="text-sm opacity-80">
           <ul className="flex flex-wrap items-center justify-center gap-4">
             <li>
@@ -80,12 +75,10 @@ export default function Footer() {
           </ul>
         </nav>
 
-        {/* 카피라이트 + 맨위로 */}
         <div className="flex items-center gap-3">
           <p className="text-xs opacity-60">
             © {year} Nara Lee. All rights reserved.
           </p>
-          <span className="opacity-20">•</span>
           <Button
             variant="ghost"
             size="icon"

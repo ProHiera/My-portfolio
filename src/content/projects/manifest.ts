@@ -1,7 +1,7 @@
 ﻿export const projectMeta = {
-  portfolio: {
-    title: "Portfolio",
-    summary: "개인 포트폴리오 사이트",
+  arca: {
+    title: "ARCA",
+    summary: "AI 기반 일정 자동 정리 및 추천 기능을 제공하는 calendar app",
   },
   myshop: {
     title: "myshop",
@@ -19,7 +19,7 @@
 } as const;
 
 export const projectLoader = {
-  portfolio: () => import("./portfolio.mdx"),
+  arca: () => import("./arca.mdx"),
   myshop: () => import("./myshop.mdx"),
   gagi: () => import("./gagi.mdx"),
   learnmate: () => import("./learnmate.mdx"),

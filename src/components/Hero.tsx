@@ -4,6 +4,56 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
+const techGroups = [
+  {
+    label: "Frontend",
+    items: [
+      { name: "Next.js", id: "nextjs" },
+      { name: "React", id: "react" },
+      { name: "TypeScript", id: "typescript" },
+      { name: "Tailwind", id: "tailwind" },
+      { name: "Flutter", id: "flutter" },
+    ],
+  },
+  {
+    label: "Backend",
+    items: [
+      { name: "Python", id: "python" },
+      { name: "R", id: "r" },
+      { name: "Java", id: "java" },
+      { name: "Kotlin", id: "kotlin" },
+      { name: "NestJS", id: "nestjs" },
+    ],
+  },
+  {
+    label: "Cloud / DevOps",
+    items: [
+      { name: "AWS", id: "aws" },
+      { name: "Firebase Hosting", id: "firebase" },
+      { name: "Google Cloud Run", id: "gcp" },
+      { name: "Vercel", id: "vercel" },
+      { name: "GitHub", id: "github" },
+    ],
+  },
+  {
+    label: "Database",
+    items: [
+      { name: "Supabase", id: "supabase" },
+      { name: "Firestore", id: "firebase" },
+      { name: "PostgreSQL", id: "postgres" },
+      { name: "MySQL", id: "mysql" },
+    ],
+  },
+  {
+    label: "UI / UX",
+    items: [
+      { name: "Figma", id: "figma" },
+      { name: "Illustrator", id: "ai" },
+      { name: "Photoshop", id: "ps" },
+    ],
+  },
+];
+
 export default function Hero() {
   return (
     <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-14">
@@ -12,7 +62,6 @@ export default function Hero() {
         {/* 왼쪽 */}
         <div>
           <motion.h1
-            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-4xl sm:text-6xl font-extrabold tracking-tight"
@@ -29,12 +78,6 @@ export default function Hero() {
             ].map((line, i) => (
               <motion.p
                 key={i}
-                initial={{
-                  opacity: 0,
-                  y: 8,
-                  filter: "blur(6px)",
-                  letterSpacing: "0.04em",
-                }}
                 animate={{
                   opacity: 1,
                   y: 0,
@@ -54,7 +97,6 @@ export default function Hero() {
 
             {/* 은은한 1회성 광택 스윕 */}
             <motion.span
-              initial={{ x: "-15%", opacity: 0 }}
               animate={{ x: "80%", opacity: [0, 0.4, 0] }}
               transition={{
                 duration: 1.4,
@@ -77,7 +119,6 @@ export default function Hero() {
           {/* ==== /타이포 효과 블록 ==== */}
 
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             className="mt-8 flex gap-3"
@@ -93,12 +134,7 @@ export default function Hero() {
           </motion.div>
 
           {/* ==== 툴 아이콘 (그룹화) ==== */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.6 }}
-            className="mt-10 relative"
-          >
+          <div className="mt-10 relative">
             {/* 은은한 그라디언트 백글로우 */}
             <div
               className="pointer-events-none absolute inset-x-0 -top-6 h-28 -z-10
@@ -107,43 +143,7 @@ export default function Hero() {
             />
 
             <div className="flex flex-col gap-5">
-              {[
-                {
-                  label: "Frontend",
-                  items: [
-                    { name: "Next.js", id: "nextjs" },
-                    { name: "React", id: "react" },
-                    { name: "TypeScript", id: "typescript" },
-                    { name: "Tailwind", id: "tailwind" },
-                  ],
-                },
-                {
-                  label: "Backend",
-                  items: [
-                    { name: "Python", id: "python" },
-                    { name: "AWS", id: "aws" },
-                    { name: "Java", id: "java" },
-                    { name: "Kotlin", id: "kotlin" },
-                    { name: "GitHub", id: "github" },
-                  ],
-                },
-                {
-                  label: "Database",
-                  items: [
-                    { name: "Supabase", id: "supabase" },
-                    { name: "PostgreSQL", id: "postgres" },
-                    { name: "MySQL", id: "mysql" },
-                  ],
-                },
-                {
-                  label: "UI / UX",
-                  items: [
-                    { name: "Figma", id: "figma" },
-                    { name: "Illustrator", id: "ai" },
-                    { name: "Photoshop", id: "ps" },
-                  ],
-                },
-              ].map((group) => (
+              {techGroups.map((group) => (
                 <div key={group.label}>
                   <div className="mb-2 text-xs uppercase tracking-wide opacity-60">
                     {group.label}
@@ -162,24 +162,24 @@ export default function Hero() {
                         aria-label={t.name}
                       >
                         {/* 3D 카드 */}
-                        <div
-                          className="rounded-2xl p-2 sm:p-2.5
+                          <div
+                            className="rounded-2xl p-2 sm:p-2.5
                                      bg-gradient-to-br from-white/70 to-white/30
                                      dark:from-white/5 dark:to-white/0
                                      ring-1 ring-black/5 dark:ring-white/10
                                      shadow-md backdrop-blur-[2px]"
-                        >
-                          {/* CDN 아이콘 + 기본 툴팁 */}
-                          <img
-                            src={`https://skillicons.dev/icons?i=${t.id}`}
-                            alt={t.name}
-                            title={t.name}
-                            width={28}
-                            height={28}
-                            className="block"
-                            loading="lazy"
-                          />
-                        </div>
+                          >
+                            {/* CDN 아이콘 + 기본 툴팁 */}
+                            <img
+                              src={`https://skillicons.dev/icons?i=${t.id}`}
+                              alt={t.name}
+                              title={t.name}
+                              width={28}
+                              height={28}
+                              className="block"
+                              loading="lazy"
+                            />
+                          </div>
 
                         {/* 하이라이트 글로우 */}
                         <div
@@ -209,13 +209,12 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
           {/* ==== /툴 아이콘 ==== */}
         </div>
 
         {/* 오른쪽: 프로필 이미지(위쪽 고정) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.98, y: 8 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 1.2, ease: "easeOut" }}
           className="relative w-full max-w-sm sm:max-w-md lg:max-w-md aspect-square mx-auto lg:mx-0 lg:self-start lg:justify-self-end translate-x-[-6%] translate-y-[12%]"
@@ -229,7 +228,6 @@ export default function Hero() {
           />
           {/* 숨 쉬는 백글로우 */}
           <motion.div
-            initial={{ opacity: 0 }}
             animate={{ opacity: 0.35, scale: [1, 1.06, 1] }}
             transition={{ duration: 6, repeat: Infinity, repeatType: "mirror" }}
             className="absolute -inset-12 -z-10 rounded-full blur-[72px] opacity-35 dark:opacity-25"

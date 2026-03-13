@@ -160,98 +160,118 @@ export default function AboutPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-semibold">
-              자격 및 전문 과정
-            </h2>
-            <ul className="grid gap-3 text-sm sm:text-base">
-              <li className="flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
-                  <Image
-                    src="/images/credentials/gtq.svg"
-                    alt="GTQ 로고"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                </span>
-                <span className="opacity-80">GTQ 1급</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
-                  <Image
-                    src="/images/credentials/gtqi.svg"
-                    alt="GTQi 로고"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                </span>
-                <span className="opacity-80">GTQi 1급</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
-                  <Image
-                    src="/images/credentials/google-g.png"
-                    alt="Google G logo"
-                    width={18}
-                    height={18}
-                  />
-                </span>
-                <span className="opacity-80">
-                  Google UI/UX Coursera 전문 과정(Professional Certificate)
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
-                  <Monitor className="size-4 opacity-70" />
-                </span>
-                <span className="opacity-80">
-                  KDT Full stack 개발자 과정 수료 2025.07.02 ~ 2025.12.26
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
-                  <Image
-                    src="/images/credentials/sqld.svg"
-                    alt="SQLD 로고"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                </span>
-                <span className="opacity-80">SQLD (SQL Developer) 1급</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
-                  <Image
-                    src="/images/credentials/adsp.svg"
-                    alt="ADsP 로고"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                </span>
-                <span className="opacity-80">ADsP (데이터분석 준전문가)</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
-                  <Image
-                    src="/images/credentials/ipe.svg"
-                    alt="정보처리기사 로고"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                </span>
-                <span className="opacity-80">정보처리기사</span>
-              </li>
-            </ul>
+            <h2 className="text-xl sm:text-2xl font-semibold">자격 및 전문 과정</h2>
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div className="rounded-2xl border border-zinc-200/70 dark:border-zinc-800/70 bg-white/60 dark:bg-zinc-950/40 p-5 sm:p-6 space-y-3">
+                <h3 className="text-lg font-semibold">자격</h3>
+                <ul className="space-y-3 text-sm sm:text-base">
+                  <li className="flex items-center gap-3">
+                    <span className="inline-flex h-6 w-6 items-center justify-center shrink-0">
+                      <Image
+                        src="/images/credentials/gtq.svg"
+                        alt="GTQ 로고"
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                      />
+                    </span>
+                    <span className="opacity-80">GTQ 1급</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="inline-flex h-6 w-6 items-center justify-center shrink-0">
+                      <Image
+                        src="/images/credentials/gtqi.svg"
+                        alt="GTQi 로고"
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                      />
+                    </span>
+                    <span className="opacity-80">GTQi 1급</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="inline-flex h-6 w-6 items-center justify-center shrink-0">
+                      <Image
+                        src="/images/credentials/sqld.svg"
+                        alt="SQLD 로고"
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                      />
+                    </span>
+                    <span className="opacity-80">SQLD (SQL Developer) 1급</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="inline-flex h-6 w-6 items-center justify-center shrink-0">
+                      <Image
+                        src="/images/credentials/adsp.svg"
+                        alt="ADsP 로고"
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                      />
+                    </span>
+                    <span className="opacity-80">ADsP (데이터분석 준전문가)</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="inline-flex h-6 w-6 items-center justify-center shrink-0">
+                      <Image
+                        src="/images/credentials/ipe.svg"
+                        alt="정보처리기사 로고"
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                      />
+                    </span>
+                    <span className="opacity-80">정보처리기사</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-zinc-200/70 dark:border-zinc-800/70 bg-white/60 dark:bg-zinc-950/40 p-5 sm:p-6 space-y-3">
+                <h3 className="text-lg font-semibold">전문 과정</h3>
+                <ul className="space-y-3 text-sm sm:text-base">
+                  <li className="flex items-center gap-3">
+                    <span className="inline-flex h-6 w-6 items-center justify-center shrink-0">
+                      <Image
+                        src="/images/credentials/google-g.png"
+                        alt="Google G logo"
+                        width={18}
+                        height={18}
+                      />
+                    </span>
+                    <span className="opacity-80">
+                      Google UI/UX Coursera 전문 과정(Professional Certificate)
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="inline-flex h-6 w-6 items-center justify-center shrink-0">
+                      <Monitor className="size-5 opacity-70" />
+                    </span>
+                    <span className="opacity-80">
+                      KD아카데미 KDT Full stack 개발자 과정 졸업 2025.07.02 ~
+                      2025.12.26
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-semibold">학력</h2>
-            <ul className="grid gap-2 text-sm sm:text-base opacity-80">
-              <li>국제패션디자인학교 — 졸업</li>
+            <ul className="grid gap-3 text-sm sm:text-base opacity-80">
+              <li className="flex items-center gap-3">
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
+                  <Image
+                    src="/images/credentials/kookje-fashion-favicon.png"
+                    alt="국제패션디자인학교 로고"
+                    width={28}
+                    height={28}
+                    className="object-contain"
+                  />
+                </span>
+                <span className="leading-snug">국제패션디자인학교 — 졸업</span>
+              </li>
               <li className="flex items-center gap-3">
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
                   <Image

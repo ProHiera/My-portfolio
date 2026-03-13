@@ -4,9 +4,9 @@ import dynamic from "next/dynamic";
 import type { ComponentType } from "react";
 
 const mdxComponents = {
-  portfolio: dynamic(
+  arca: dynamic(
     async () =>
-      (await import("@/content/projects/portfolio.mdx"))
+      (await import("@/content/projects/arca.mdx"))
         .default as ComponentType<Record<string, unknown>>,
     { ssr: false, loading: () => <div className="h-6" /> }
   ),
