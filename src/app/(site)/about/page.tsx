@@ -56,7 +56,7 @@ export default function AboutPage() {
                   현실 적용
                 </span>
                 <span className="opacity-80">
-                  예쁘게가 아니라 실제로 운영/사용 가능한 결과를 만듭니다.
+                  심미적 감각과 실제 운영/사용 가능한 결과를 동시에 만듭니다.
                 </span>
               </li>
               <li className="flex flex-wrap items-start gap-3">
