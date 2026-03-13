@@ -1,5 +1,6 @@
 ﻿import Image from "next/image";
 import { Monitor } from "lucide-react";
+import { px } from "framer-motion";
 
 export const metadata = {
   title: "About | Nara",
@@ -273,13 +274,13 @@ export default function AboutPage() {
                 <span className="leading-snug">국제패션디자인학교 — 졸업</span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
+                <span className="inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
                   <Image
                     src="/images/credentials/kcu-symbol.png"
                     alt="고려사이버대학교 심볼"
                     width={28}
                     height={28}
-                    className="object-contain"
+                    className="object-contain scale-[2.4]"
                   />
                 </span>
                 <span className="leading-snug">
