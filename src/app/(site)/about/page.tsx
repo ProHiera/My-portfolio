@@ -1,5 +1,5 @@
 ﻿import Image from "next/image";
-import { BadgeCheck, Monitor, PenTool } from "lucide-react";
+import { Monitor } from "lucide-react";
 
 export const metadata = {
   title: "About | Nara",
@@ -166,13 +166,25 @@ export default function AboutPage() {
             <ul className="grid gap-3 text-sm sm:text-base">
               <li className="flex items-center gap-3">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
-                  <BadgeCheck className="size-4 opacity-70" />
+                  <Image
+                    src="/images/credentials/gtq.svg"
+                    alt="GTQ 로고"
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
                 </span>
                 <span className="opacity-80">GTQ 1급</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
-                  <PenTool className="size-4 opacity-70" />
+                  <Image
+                    src="/images/credentials/gtqi.svg"
+                    alt="GTQi 로고"
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
                 </span>
                 <span className="opacity-80">GTQi 1급</span>
               </li>
@@ -199,9 +211,39 @@ export default function AboutPage() {
               </li>
               <li className="flex items-center gap-3">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
-                  <Monitor className="size-4 opacity-70" />
+                  <Image
+                    src="/images/credentials/sqld.svg"
+                    alt="SQLD 로고"
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
                 </span>
-                <span className="opacity-80">웹디자인기능사</span>
+                <span className="opacity-80">SQLD (SQL Developer) 1급</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
+                  <Image
+                    src="/images/credentials/adsp.svg"
+                    alt="ADsP 로고"
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
+                </span>
+                <span className="opacity-80">ADsP (데이터분석 준전문가)</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
+                  <Image
+                    src="/images/credentials/ipe.svg"
+                    alt="정보처리기사 로고"
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
+                </span>
+                <span className="opacity-80">정보처리기사</span>
               </li>
             </ul>
           </section>
@@ -210,7 +252,20 @@ export default function AboutPage() {
             <h2 className="text-xl sm:text-2xl font-semibold">학력</h2>
             <ul className="grid gap-2 text-sm sm:text-base opacity-80">
               <li>국제패션디자인학교 — 졸업</li>
-              <li>고려사이버대학교 AI·데이터과학부 — 재학 중</li>
+              <li className="flex items-center gap-3">
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-900/40">
+                  <Image
+                    src="/images/credentials/kcu-symbol.png"
+                    alt="고려사이버대학교 심볼"
+                    width={28}
+                    height={28}
+                    className="object-contain"
+                  />
+                </span>
+                <span className="leading-snug">
+                  KCU 고려사이버대학교 AI·데이터과학부 — 재학 (2026.02.28 ~)
+                </span>
+              </li>
             </ul>
           </section>
         </div>
